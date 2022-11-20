@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import * as React from 'react';
 
 import styles from './style';
@@ -8,11 +8,13 @@ function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <FlatList
         data={[
-          { key: 'API', path: 'Api' },
-          { key: 'Components', path: '' },
-          { key: 'Docs' , path: ''}
+          { key: 'Apis', path: 'Api' },
+          { key: 'Components', path: 'Com' },
+          { key: 'Docs', path: 'Doc' }
         ]}
-        renderItem={({ item }) => <Text style={styles.item} onPress={() => pushPage(navigation, item.path)}>{item.key}</Text>}
+        renderItem={({ item }) => <TouchableOpacity onPress={() => pushPage(navigation, item.path)}>
+          <Text style={styles.item}>{item.key}</Text>
+        </TouchableOpacity>}
       />
     </View>
   );

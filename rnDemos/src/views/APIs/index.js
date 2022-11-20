@@ -1,10 +1,13 @@
 import React from 'react';
-import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { SectionList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+
+// 外部引入，方便cli工具
+import {data} from './data.js'
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-   paddingTop: 22
+    flex: 1,
+    paddingTop: 22
   },
   sectionHeader: {
     paddingTop: 2,
@@ -22,20 +25,26 @@ const styles = StyleSheet.create({
   },
 })
 
-const ApiScreen = () => {
-    return (
-      <View style={styles.container}>
-        <SectionList
-          sections={[
-            {title: 'D', data: ['Devin', 'Dan', 'Dominic']},
-            {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-          renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-          keyExtractor={(item, index) => index}
-        />
-      </View>
-    );
+const ApiScreen = ({ navigation }) => {
+  // console.log(data);
+  return (
+    <View style={styles.container}>
+      {/* 长列表 */}
+      <SectionList
+        sections={[
+          { title: 'API', data}
+        ]}
+        renderItem={({ item }) => <TouchableOpacity onPress={() => pushPage(navigation, item)}><Text style={styles.item}>{item}</Text></TouchableOpacity>}
+        renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+        keyExtractor={(item, index) => index}
+      />
+    </View>
+  );
+}
+
+function pushPage(navigation, path) {
+  console.log(path);
+  navigation.push(path);
 }
 
 export default ApiScreen;
