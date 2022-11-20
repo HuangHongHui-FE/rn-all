@@ -36,7 +36,13 @@ yarn add react-native-reanimated react-native-gesture-handler react-native-scree
 
 
 
+### 差异点
 
+1. 默认布局flex， 默认方向column。
+2. border等复合属性，需要分开写。
+3. 文字必须包裹在Text标签里面
+4. css样式小驼峰形式，backgroundColor...
+5. 
 
 ### next pages:
 

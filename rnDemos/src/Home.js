@@ -1,21 +1,25 @@
-import { View, Text, FlatList, SectionList } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import * as React from 'react';
 
 import styles from './style';
-function HomeScreen() {
+function HomeScreen({ navigation }) {
+
   return (
     <View style={styles.container}>
-      <SectionList
-        sections={[
-          { title: 'API', data: ['Devin', 'Dan', 'Dominic'] },
-          { title: '组件', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie'] },
+      <FlatList
+        data={[
+          { key: 'API', path: 'Api' },
+          { key: 'Components', path: '' },
+          { key: 'Docs' , path: ''}
         ]}
-        renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
-        renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-        keyExtractor={(item, index) => index}
+        renderItem={({ item }) => <Text style={styles.item} onPress={() => pushPage(navigation, item.path)}>{item.key}</Text>}
       />
     </View>
   );
+}
+function pushPage(navigation, path) {
+  console.log(path);
+  navigation.push(path)
 }
 
 
