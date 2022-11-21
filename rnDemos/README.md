@@ -34,10 +34,6 @@ yarn add react-native-reanimated react-native-gesture-handler react-native-scree
 
 ##### newKnow: 快速创建新的路由与组件
 
-需要用到：handlebars模板编译， 
-
-
-
 新建路由以及组件的流程梳理:
 
 App.js里
@@ -118,7 +114,7 @@ import Appearance from './src/views/APIs/Appearance/index'
   };
   ```
 
-- 如果有了directoryName，就进行apiName的创建；注意动态替换里面需要替换的t弹窗， APP(做不做都可)
+- 如果有了directoryName，就进行apiName的创建；注意动态替换里面需要替换的弹窗， APP(做不做都可)
 
   ```
   import React, { useState } from "react";

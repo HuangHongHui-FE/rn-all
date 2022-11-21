@@ -4,12 +4,8 @@ const newKnow = [
         items: ['a', 'b', 'c']
     },
     {
-        dir: "BBB",
-        items: ["A", "B"]
-    },
-    {
         dir: 'Apis',
-        items: ['aaa', 'bbb', "Alert"]
+        items: ["Alert", "RootTag", "Share", "StyleSheet"]
     }
 ]
 
