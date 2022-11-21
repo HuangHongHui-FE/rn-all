@@ -42,7 +42,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
 
-        <Stack.Screen name="Api" component={ApisScreen} />
+        <Stack.Screen name="Apis" component={ApisScreen} />
         <Stack.Screen name="AccessibilityInfo" component={AccessibilityInfo} />
         <Stack.Screen name="Alert" component={Alert} />
         <Stack.Screen name="Animated" component={Animated} />
@@ -65,9 +65,9 @@ function App() {
         {/* <Stack.Screen name="Animated" component={Animated} /> */}
         {/* <Stack.Screen name="Animated" component={Animated} /> */}
 
-        <Stack.Screen name="Com" component={ComsScreen} />
+        <Stack.Screen name="Coms" component={ComsScreen} />
 
-        <Stack.Screen name="Doc" component={DocsScreen} />
+        <Stack.Screen name="Docs" component={DocsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

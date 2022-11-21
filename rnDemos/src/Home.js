@@ -8,9 +8,9 @@ function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <FlatList
         data={[
-          { key: 'Apis', path: 'Api' },
-          { key: 'Components', path: 'Com' },
-          { key: 'Docs', path: 'Doc' }
+          { key: 'Apis', path: 'Apis' },
+          { key: 'Components', path: 'Coms' },
+          { key: 'Docs', path: 'Docs' }
         ]}
         renderItem={({ item }) => <TouchableOpacity onPress={() => pushPage(navigation, item.path)}>
           <Text style={styles.item}>{item.key}</Text>
