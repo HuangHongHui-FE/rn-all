@@ -32,9 +32,40 @@ yarn add react-native-reanimated react-native-gesture-handler react-native-scree
 
 ### 搞Cli工具
 
-##### newKnow: 快速创建新的路由与组件
+#### newKnow: 快速创建新的路由与组件
 
-新建路由以及组件的流程梳理:
+##### newKnow    cli的使用：
+
+1. 更改config里newKnow里面的内容，dir为views直属文件夹，items里为小文件夹
+
+   ```
+   const newKnow = [
+       {
+           dir: 'AAA',  // string
+           items: ['a', 'b', 'c']
+       },
+       {
+           dir: 'Apis',
+           items: ["Alert", "RootTag", "Share", "StyleSheet"]
+       }
+   ]
+   
+   module.exports = {
+       newKnow
+   }
+   ```
+
+2. 在Cli目录下：
+
+   ```
+   node newKnow.js
+   ```
+
+3. 重新npm run android
+
+
+
+##### 新建路由以及组件的流程梳理:
 
 App.js里
 
@@ -169,6 +200,10 @@ view - APIs - data.js里
 - 为什么要有这个仓库
   - 熟悉官网组件， API，以及解决过程中的问题，总结出差异点，同时在注释中加入自己的思考。
   - 锻炼技能：例如Cli工具的编写
+  
+- newKnow    cli里没用handlebars 或者 art-template的原因:
+
+  只是做了H&API&H简单的字符串的替换，str.replaceAll方法可以直接解决。
 
 
 

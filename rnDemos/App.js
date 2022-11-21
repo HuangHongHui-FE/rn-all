@@ -6,6 +6,17 @@ import HomeScreen from './src/Home';
 // API的
 import ApisScreen from './src/views/Apis'
 import AccessibilityInfo from './src/views/Apis/AccessibilityInfo/index'
+import RootTag from './src/views/Apis/RootTag/index'
+import Share from './src/views/Apis/Share/index'
+import StyleSheet from './src/views/Apis/StyleSheet/index'
+import Systrace from './src/views/Apis/Systrace/index'
+import Transforms from './src/views/Apis/Transforms/index'
+import Vibration from './src/views/Apis/Vibration/index'
+import useColorScheme from './src/views/Apis/useColorScheme/index'
+import useWindowDimensions from './src/views/Apis/useWindowDimensions/index'
+import BackHandler from './src/views/Apis/BackHandler/index'
+import PermissionsAndroid from './src/views/Apis/PermissionsAndroid/index'
+import ToastAndroid from './src/views/Apis/ToastAndroid/index'
 import Alert from './src/views/Apis/Alert/index'  
 import Animated from './src/views/Apis/Animated/index'
 import Appearance from './src/views/Apis/Appearance/index'
@@ -44,6 +55,17 @@ function App() {
 
         <Stack.Screen name="Apis" component={ApisScreen} />
         <Stack.Screen name="AccessibilityInfo" component={AccessibilityInfo} />
+        <Stack.Screen name="RootTag" component={RootTag} />
+        <Stack.Screen name="Share" component={Share} />
+        <Stack.Screen name="StyleSheet" component={StyleSheet} />
+        <Stack.Screen name="Systrace" component={Systrace} />
+        <Stack.Screen name="Transforms" component={Transforms} />
+        <Stack.Screen name="Vibration" component={Vibration} />
+        <Stack.Screen name="useColorScheme" component={useColorScheme} />
+        <Stack.Screen name="useWindowDimensions" component={useWindowDimensions} />
+        <Stack.Screen name="BackHandler" component={BackHandler} />
+        <Stack.Screen name="PermissionsAndroid" component={PermissionsAndroid} />
+        <Stack.Screen name="ToastAndroid" component={ToastAndroid} />
         <Stack.Screen name="Alert" component={Alert} />
         <Stack.Screen name="Animated" component={Animated} />
         <Stack.Screen name="Appearance" component={Appearance} />
