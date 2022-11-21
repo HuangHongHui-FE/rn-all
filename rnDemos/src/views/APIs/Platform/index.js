@@ -2,12 +2,12 @@ import React from 'react';
 import { Platform, StyleSheet, Text, ScrollView } from 'react-native';
 
 const App = () => {
-    const Component = Platform.select({
-        ios: () => require('ComponentIOS'),
-        android: () => require('ComponentAndroid'),
-        native: () => require('ComponentForNative'),
-        default: () => require('ComponentForWeb')
-    })();
+    // const Component = Platform.select({
+    //     ios: () => require('ComponentIOS'),
+    //     android: () => require('ComponentAndroid'),
+    //     native: () => require('ComponentForNative'),
+    //     default: () => require('ComponentForWeb')
+    // })();
 
 
     return (
