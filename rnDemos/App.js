@@ -4,34 +4,34 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './src/Home';
 // API的
-import ApiScreen from './src/views/APIs'
-import AccessibilityInfo from './src/views/APIs/AccessibilityInfo/index'
-import Alert from './src/views/APIs/Alert/index'
-import Animated from './src/views/APIs/Animated/index'
-import Appearance from './src/views/APIs/Appearance/index'
-import AppState from './src/views/APIs/AppState/index'
-import DevSettings from './src/views/APIs/DevSettings/index'
-import Dimensions from './src/views/APIs/Dimensions/index'
-import Easing from './src/views/APIs/Easing/index'
-import InteractionManager from './src/views/APIs/InteractionManager/index'
-import Keyboard from './src/views/APIs/Keyboard/index'
-import LayoutAnimation from './src/views/APIs/LayoutAnimation/index'
-import LayoutAnimation2 from './src/views/APIs/LayoutAnimation/index2'
-import LayoutAnimation3 from './src/views/APIs/LayoutAnimation/index3'
-import Linking from './src/views/APIs/Linking/index'
-import PanResponder from './src/views/APIs/PanResponder/index'
-import PixelRatio from './src/views/APIs/PixelRatio/index'
-import Platform from './src/views/APIs/Platform/index'
-import PlatformColor from './src/views/APIs/PlatformColor/index'
-// import Appearance from './src/views/APIs/Appearance/index'
-// import Appearance from './src/views/APIs/Appearance/index'
-// import Appearance from './src/views/APIs/Appearance/index'
+import ApisScreen from './src/views/Apis'
+import AccessibilityInfo from './src/views/Apis/AccessibilityInfo/index'
+import Alert from './src/views/Apis/Alert/index'  
+import Animated from './src/views/Apis/Animated/index'
+import Appearance from './src/views/Apis/Appearance/index'
+import AppState from './src/views/Apis/AppState/index'
+import DevSettings from './src/views/Apis/DevSettings/index'
+import Dimensions from './src/views/Apis/Dimensions/index'
+import Easing from './src/views/Apis/Easing/index'
+import InteractionManager from './src/views/Apis/InteractionManager/index'
+import Keyboard from './src/views/Apis/Keyboard/index'
+import LayoutAnimation from './src/views/Apis/LayoutAnimation/index'
+import LayoutAnimation2 from './src/views/Apis/LayoutAnimation/index2'
+import LayoutAnimation3 from './src/views/Apis/LayoutAnimation/index3'
+import Linking from './src/views/Apis/Linking/index'
+import PanResponder from './src/views/Apis/PanResponder/index'
+import PixelRatio from './src/views/Apis/PixelRatio/index'
+import Platform from './src/views/Apis/Platform/index'
+import PlatformColor from './src/views/Apis/PlatformColor/index'
+// import Appearance from './src/views/Apis/Appearance/index'
+// import Appearance from './src/views/Apis/Appearance/index'
+// import Appearance from './src/views/Apis/Appearance/index'
 
 // 组件的
-import ComScreen from './src/views/Coms'
+import ComsScreen from './src/views/Coms'
 
 // 文档相关的
-import DocScreen from './src/views/Docs'
+import DocsScreen from './src/views/Docs'
 
 const Stack = createNativeStackNavigator();
 
@@ -42,7 +42,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
 
-        <Stack.Screen name="Api" component={ApiScreen} />
+        <Stack.Screen name="Api" component={ApisScreen} />
         <Stack.Screen name="AccessibilityInfo" component={AccessibilityInfo} />
         <Stack.Screen name="Alert" component={Alert} />
         <Stack.Screen name="Animated" component={Animated} />
@@ -65,9 +65,9 @@ function App() {
         {/* <Stack.Screen name="Animated" component={Animated} /> */}
         {/* <Stack.Screen name="Animated" component={Animated} /> */}
 
-        <Stack.Screen name="Com" component={ComScreen} />
+        <Stack.Screen name="Com" component={ComsScreen} />
 
-        <Stack.Screen name="Doc" component={DocScreen} />
+        <Stack.Screen name="Doc" component={DocsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
