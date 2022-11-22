@@ -40,6 +40,28 @@ import PlatformColor from './src/views/Apis/PlatformColor/index'
 
 // 组件的
 import ComsScreen from './src/views/Coms'
+import ActivityIndicator from './src/views/Coms/ActivityIndicator/index'
+import Button from './src/views/Coms/Button/index'
+import FlatList from './src/views/Coms/FlatList/index'
+import Image from './src/views/Coms/Image/index'
+import ImageBackground from './src/views/Coms/ImageBackground/index'
+import KeyboardAvoidingView from './src/views/Coms/KeyboardAvoidingView/index'
+import Modal from './src/views/Coms/Modal/index'
+import Pressable from './src/views/Coms/Pressable/index'
+import RefreshControl from './src/views/Coms/RefreshControl/index'
+import ScrollView from './src/views/Coms/ScrollView/index'
+import SectionList from './src/views/Coms/SectionList/index'
+import StatusBar from './src/views/Coms/StatusBar/index'
+import Switch from './src/views/Coms/Switch/index'
+import Text from './src/views/Coms/Text/index'
+import TextInput from './src/views/Coms/TextInput/index'
+import TouchableHighlight from './src/views/Coms/TouchableHighlight/index'
+import TouchableOpacity from './src/views/Coms/TouchableOpacity/index'
+import TouchableWithoutFeedback from './src/views/Coms/TouchableWithoutFeedback/index'
+import View from './src/views/Coms/View/index'
+import VirtualizedList from './src/views/Coms/VirtualizedList/index'
+import DrawerLayoutAndroid from './src/views/Coms/DrawerLayoutAndroid/index'
+import TouchableNativeFeedback from './src/views/Coms/TouchableNativeFeedback/index'
 
 // 文档相关的
 import DocsScreen from './src/views/Docs'
@@ -88,6 +110,28 @@ function App() {
         {/* <Stack.Screen name="Animated" component={Animated} /> */}
 
         <Stack.Screen name="Coms" component={ComsScreen} />
+        <Stack.Screen name="ActivityIndicator" component={ActivityIndicator} />
+        <Stack.Screen name="Button" component={Button} />
+        <Stack.Screen name="FlatList" component={FlatList} />
+        <Stack.Screen name="Image" component={Image} />
+        <Stack.Screen name="ImageBackground" component={ImageBackground} />
+        <Stack.Screen name="KeyboardAvoidingView" component={KeyboardAvoidingView} />
+        <Stack.Screen name="Modal" component={Modal} />
+        <Stack.Screen name="Pressable" component={Pressable} />
+        <Stack.Screen name="RefreshControl" component={RefreshControl} />
+        <Stack.Screen name="ScrollView" component={ScrollView} />
+        <Stack.Screen name="SectionList" component={SectionList} />
+        <Stack.Screen name="StatusBar" component={StatusBar} />
+        <Stack.Screen name="Switch" component={Switch} />
+        <Stack.Screen name="Text" component={Text} />
+        <Stack.Screen name="TextInput" component={TextInput} />
+        <Stack.Screen name="TouchableHighlight" component={TouchableHighlight} />
+        <Stack.Screen name="TouchableOpacity" component={TouchableOpacity} />
+        <Stack.Screen name="TouchableWithoutFeedback" component={TouchableWithoutFeedback} />
+        <Stack.Screen name="View" component={View} />
+        <Stack.Screen name="VirtualizedList" component={VirtualizedList} />
+        <Stack.Screen name="DrawerLayoutAndroid" component={DrawerLayoutAndroid} />
+        <Stack.Screen name="TouchableNativeFeedback" component={TouchableNativeFeedback} />
 
         <Stack.Screen name="Docs" component={DocsScreen} />
       </Stack.Navigator>

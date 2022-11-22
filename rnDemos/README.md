@@ -210,14 +210,19 @@ view - APIs - data.js里
 ### 优化点：
 
 - Interactionmanager 可以将一些耗时较长的工作安排到所有互动或动画完成之后再进行。这样可以保证 JavaScript 动画的流畅运行。
-- 长列表：SectionList。。。
+- 长列表：SectionList。。。本组件继承自`PureComponent`而非通常的`Component`，这意味着如果其`props`在`浅比较`中是相等的，则不会重新渲染。
 - 根据图像素密度获得指定大小的图片：getPixelSizeForLayoutSize
+- 
 
 ### next pages:
 
 ##### RN 基于Metro 拆包实战
 
 https://juejin.cn/post/7106028240438820871#heading-1
+
+##### expo-constants
+
+https://docs.expo.dev/versions/latest/sdk/constants/
 
 
 
