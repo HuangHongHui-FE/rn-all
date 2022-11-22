@@ -65,6 +65,8 @@ import TouchableNativeFeedback from './src/views/Coms/TouchableNativeFeedback/in
 
 // 文档相关的
 import DocsScreen from './src/views/Docs'
+import Network from './src/views/Docs/Network/index'
+import Animateds from './src/views/Docs/Animateds/index'
 
 const Stack = createNativeStackNavigator();
 
@@ -134,6 +136,8 @@ function App() {
         <Stack.Screen name="TouchableNativeFeedback" component={TouchableNativeFeedback} />
 
         <Stack.Screen name="Docs" component={DocsScreen} />
+        <Stack.Screen name="Network" component={Network} />
+        <Stack.Screen name="Animateds" component={Animateds} />
       </Stack.Navigator>
     </NavigationContainer>
   );

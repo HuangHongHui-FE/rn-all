@@ -10,6 +10,10 @@ const newKnow = [
     {
         dir: 'Coms',
         items: ["ActivityIndicator", "Button", "FlatList", "Image", "ImageBackground", "KeyboardAvoidingView", "Modal", "Pressable", "RefreshControl", "ScrollView", "SectionList", "StatusBar", "Switch", "Text", "TextInput", "TouchableHighlight", "TouchableOpacity", "TouchableWithoutFeedback", "View", "VirtualizedList", "DrawerLayoutAndroid", "TouchableNativeFeedback"]
+    },
+    {
+        dir: 'Docs',
+        items: ['Network', "Animateds"]
     }
 ]
 

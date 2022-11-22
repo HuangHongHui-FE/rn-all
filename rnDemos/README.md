@@ -170,19 +170,45 @@ view - APIs - data.js里
 // data新增一项
 ```
 
+### Docs
+
+##### 静态资源的引入
+
+```
+有my-icon.ios.png和my-icon.android.png，Packager 就会根据平台而选择不同的文件。
+你还可以使用@2x，@3x这样的文件名后缀，来为不同的屏幕精度提供图片。
+	.
+    ├── button.js
+    └── img
+        ├── check.png
+        ├── check@2x.png
+        └── check@3x.png
+        
+        
+
+```
+
+### android与ios指南？？？
 
 
 
 
 
+### get
 
+##### 搜索第三方库：
 
+https://reactnative.directory/
 
+##### 编译优化-android:
 
+```
+npm run android --active-arch-only
+```
 
+在本地构建 Android 应用程序时，默认情况下构建所有 4 个[应用程序二进制接口 (ABI](https://developer.android.com/ndk/guides/abis) ) ：`armeabi-v7a`、、& 。`arm64-v8a``x86``x86_64`
 
-
-
+但是，如果您在本地构建并测试您的模拟器或在物理设备上，您可能不需要构建所有这些。
 
 
 
@@ -210,9 +236,61 @@ view - APIs - data.js里
 ### 优化点：
 
 - Interactionmanager 可以将一些耗时较长的工作安排到所有互动或动画完成之后再进行。这样可以保证 JavaScript 动画的流畅运行。
+
 - 长列表：SectionList。。。本组件继承自`PureComponent`而非通常的`Component`，这意味着如果其`props`在`浅比较`中是相等的，则不会重新渲染。
+
 - 根据图像素密度获得指定大小的图片：getPixelSizeForLayoutSize
-- 
+
+- 如果你的[`FlatList`](https://reactnative.cn/docs/flatlist)渲染得很慢, 请确保你使用了[`getItemLayout`](https://reactnative.cn/docs/flatlist#getitemlayout)，它通过跳过对items的处理来优化你的渲染速度。
+
+- `shouldComponentUpdate`函数来指明在什么样的确切条件下，你希望这个组件得到重绘, 利用`PureComponent`
+
+- 图片的：直接修改尺寸，更好的方案是使用`transform: [{scale}]`的样式属性来改变尺寸。比如当你点击一个图片，要将它放大到全屏的时候，就可以使用这个属性。
+
+- Touchable系列组件：如果有一项操作与点击事件所带来的透明度改变或者高亮效果发生在同一帧中，那么有可能在`onPress`函数结束之前我们都看不到这些效果。比如在`onPress`执行了一个`setState`的操作，这个操作需要大量计算工作并且导致了掉帧。对此的一个解决方案是将`onPress`处理函数中的操作封装到`requestAnimationFrame`中：
+
+  ```
+  handleOnPress() {
+    requestAnimationFrame(() => {
+      this.doExpensiveAction();
+    });
+  }
+  ```
+
+- 列表优化：
+
+  - 使用优化缓存的图片库[](https://reactnative.cn/docs/optimizing-flatlist-configuration#使用优化缓存的图片库)
+
+    您可以使用社区包（例如来自[@DylanVann](https://github.com/DylanVann)[的 react-native-fast-image](https://github.com/DylanVann/react-native-fast-image)）来获得更高性能的图像。列表中的每个图像都是一个实例。它到达钩子的速度越快，您的 Javascript 线程再次释放的速度就越快。`new Image()``loaded`
+
+  - React 的`PureComponent`实现[`shouldComponentUpdate`](https://zh-hans.reactjs.org/docs/react-component.html#shouldcomponentupdate)与浅比较；
+
+  - 如果您所有的列表项组件都具有相同的高度（或宽度，对于水平列表），则提供[getItemLayout 属性](https://reactnative.cn/docs/flatlist#getitemlayout)可以消除您`FlatList`管理异步布局计算的需要。这是一种非常理想的优化技术。
+
+  - 使用 keyExtractor 或 key[](https://reactnative.cn/docs/optimizing-flatlist-configuration#使用-keyextractor-或-key)
+
+    您可以将 设置[`keyExtractor`](https://reactnative.cn/docs/flatlist#keyextractor)为您的`FlatList`组件。此道具用于缓存并作为 React`key`来跟踪项目重新排序。
+
+  - 避免在 renderItem 中使用匿名函数[](https://reactnative.cn/docs/optimizing-flatlist-configuration#避免在-renderitem-中使用匿名函数)
+
+    将函数移出`renderItem`到 render 函数的外部，这样它就不会在每次调用 render 函数时重新创建自己。
+
+    ```js
+    const renderItem = ({ item }) => (
+       <View key={item.key}>
+          <Text>{item.title}</Text>
+       </View>
+     );
+    return (
+      // ...
+      <FlatList data={items} renderItem={renderItem} />;
+      // ...
+    );
+    ```
+
+- 务必在卸载组件前清除定时器！
+
+- 使用新的 Hermes 引擎
 
 ### next pages:
 
@@ -224,7 +302,7 @@ https://juejin.cn/post/7106028240438820871#heading-1
 
 https://docs.expo.dev/versions/latest/sdk/constants/
 
-
+##### React Native包体积优化之图片优化
 
 
 
